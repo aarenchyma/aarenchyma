@@ -14,7 +14,7 @@ I like problems where the wrong answer looks right until it doesn't — race con
 
 ## Stack
 
-`JavaScript` `Node.js` `Express` `MongoDB` `Redis` `Socket.IO` `React` `Redux` `Next.js` `Java` `Spring Boot` `microservices` `kafka` `software designs`
+`JavaScript` `Node.js` `Express` `MongoDB` `Redis` `Socket.IO` `React` `Redux` `Next.js` `Java` `Spring Boot` `kafka`
 
 ## Find me
 
