@@ -1,17 +1,24 @@
 # Hi, I'm Victor 👋
 
-## About Me
+## What I actually do
 
-Software engineer based in Lagos, Nigeria, focused on backend architecture and distributed systems. I design and build systems end-to-end — from data models and service boundaries to real-time infrastructure — with an emphasis on correctness under concurrency and clean separation of concerns.
+Most of software is not writing code — it's deciding where the boundaries go. I spend most of my time on that: where does this responsibility live, what happens when two things happen at once, what breaks first under load, what's the blast radius when it does.
 
-Currently the sole engineer behind **[Sendrey](sendrey.com)**, a two-sided delivery/errand marketplace, where I've built:
+I'm the sole engineer behind **[Sendrey](sendrey.com)**, a two-sided delivery/errand marketplace, where I own the system end-to-end. A few of the harder problems I've had to actually solve there:
 
-- Escrow-based payments & wallet system with dispute resolution (Paystack)
-- Real-time WebRTC calling between users and runners (Agora)
-- Live chat, order tracking, and KYC verification pipelines
-- A Node.js/Express/MongoDB/Socket.IO/Redis backend, React/Redux frontend (web + mobile via Capacitor), and a Next.js admin dashboard
+- **Escrow payments under concurrent access** — money moves between wallets, orders, and disputes at the same time. Getting the ledger to stay consistent when two requests touch the same balance is a much harder problem than "call Paystack."
+- **Real-time state across sockets, retries, and reconnects** — chat, order tracking, and live calls (WebRTC via Agora) all need to survive dropped connections without silently losing or duplicating events. Sequence numbers, ACKs, and gap detection, not just `socket.emit()`.
+- **KYC and dispute pipelines with real state machines** — statuses that can't skip steps, windows that open and close, and admin overrides that have to not break the automated flow.
 
-I like problems where the wrong answer looks right until it doesn't — race conditions, ledger consistency, sync bugs, queue ordering. Outside of Sendrey, I study distributed-systems and architecture fundamentals through smaller structured projects (Java, layered/modular design).
+The stack for this is Node.js/Express, MongoDB, Redis, Socket.IO on the backend, React/Redux (web + Capacitor mobile) and Next.js on the frontend — but the stack was never the hard part.
+
+## Why I'm digging into architecture now
+
+I'm currently taking a software architecture course, and it's reframed a lot for me: writing the code that satisfies a spec is the easy 20%. Deciding the shape of the system — what's a plugin, what's core, what's allowed to know about what — is the part that actually determines whether the codebase is still sane a year later.
+
+I've started working through smaller, focused Java projects specifically to isolate architectural patterns away from the noise of a full production app. First one: a **[payment processing system built on microkernel architecture](link-to-repo)** — a core kernel that knows nothing about *how* any payment method works, only that plugins conform to a shared interface. The point of the exercise wasn't "process a payment," it was proving a new payment method can be added with zero changes to the core.
+
+More of these to come as I go through the course.
 
 ## Stack
 
