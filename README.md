@@ -4,7 +4,7 @@
 
 Most of software is not writing code — it's deciding where the boundaries go. I spend most of my time on that: where does this responsibility live, what happens when two things happen at once, what breaks first under load, what's the blast radius when it does.
 
-I'm the sole engineer behind **[Sendrey](sendrey.com)**, a two-sided delivery/errand marketplace, where I own the system end-to-end. A few of the harder problems I've had to actually solve there:
+I'm the sole engineer behind **[Sendrey](https://app.sendrey.com)**, a two-sided delivery/errand marketplace, where I own the system end-to-end. A few of the harder problems I've had to actually solve there:
 
 - **Escrow payments under concurrent access** — money moves between wallets, orders, and disputes at the same time. Getting the ledger to stay consistent when two requests touch the same balance is a much harder problem than "call Paystack."
 - **Real-time state across sockets, retries, and reconnects** — chat, order tracking, and live calls (WebRTC via Agora) all need to survive dropped connections without silently losing or duplicating events. Sequence numbers, ACKs, and gap detection, not just `socket.emit()`.
