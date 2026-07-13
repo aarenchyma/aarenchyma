@@ -16,7 +16,7 @@ The stack for this is Node.js/Express, MongoDB, Redis, Socket.IO on the backend,
 
 I'm currently taking a software architecture course, and it's reframed a lot for me: writing the code that satisfies a spec is the easy 20%. Deciding the shape of the system — what's a plugin, what's core, what's allowed to know about what — is the part that actually determines whether the codebase is still sane a year later.
 
-I've started working through smaller, focused Java projects specifically to isolate architectural patterns away from the noise of a full production app. First one: a **[payment processing system built on microkernel architecture](link-to-repo)** — a core kernel that knows nothing about *how* any payment method works, only that plugins conform to a shared interface. The point of the exercise wasn't "process a payment," it was proving a new payment method can be added with zero changes to the core.
+I've started working through smaller, focused Java projects specifically to isolate architectural patterns away from the noise of a full production app. First one: a **[payment processing system built on microkernel architecture](https://github.com/aarenchyma/Payment-Processing-System---MicroKernel-Architecture)** — a core kernel that knows nothing about *how* any payment method works, only that plugins conform to a shared interface. The point of the exercise wasn't "process a payment," it was proving a new payment method can be added with zero changes to the core.
 
 
 ## Stack
