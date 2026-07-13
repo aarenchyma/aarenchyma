@@ -18,7 +18,6 @@ I'm currently taking a software architecture course, and it's reframed a lot for
 
 I've started working through smaller, focused Java projects specifically to isolate architectural patterns away from the noise of a full production app. First one: a **[payment processing system built on microkernel architecture](link-to-repo)** — a core kernel that knows nothing about *how* any payment method works, only that plugins conform to a shared interface. The point of the exercise wasn't "process a payment," it was proving a new payment method can be added with zero changes to the core.
 
-More of these to come as I go through the course.
 
 ## Stack
 
